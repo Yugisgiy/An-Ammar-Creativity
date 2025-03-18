@@ -35,22 +35,21 @@ jobs:
           sudo apt-get install libvlccore-dev
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null
-          haxelib install lime
-          haxelib install openfl
-          haxelib --never install flixel
+          haxelib install lime https://github.com/MobilePorting/lime
+          haxelib install openfl https://github.com/MobilePorting/openfl
+          haxelib --never install flixel 4.11.0
           haxelib run lime setup flixel
           haxelib run lime setup
-          haxelib install flixel-tools
-          haxelib install flixel-ui
-          haxelib install flixel-addons
+          haxelib install flixel-ui 2.4.0
+          haxelib install flixel-addons 2.11.0
           haxelib install tjson
           haxelib install hxjsonast
-          haxelib install hxCodec
+          haxelib install hxCodec https://github.com/MobilePorting/hxCodec-0.6.3
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit
-          haxelib install hscript
+          haxelib install hscript 2.4.0
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-          haxelib install hxcpp-debug-server
+          haxelib install hxcpp https://github.com/MobilePorting/hxcpp
           haxelib list
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
